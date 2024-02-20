@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Danger
+  - Point
+  - Sol
+  - DetruirPlayer
+  - DetruirePlayer
   layers:
   - Default
   - TransparentFX

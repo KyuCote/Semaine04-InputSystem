@@ -9,6 +9,8 @@ public class Mouvement : MonoBehaviour
     private Rigidbody _rb;
     private Vector2 _valeurRecue;
 
+    private int _points = 0;
+
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -29,5 +31,19 @@ public class Mouvement : MonoBehaviour
 
     public void OnMove(InputValue value){
         _valeurRecue = value.Get<Vector2>();
+    }
+
+    private void OnCollisionEnter(Collision other){
+        if(other.gameObject.tag == "Point"){
+
+            Destroy(other.gameObject);
+            _points++;
+            Debug.Log(_points);
+
+        }
+
+        if(other.gameObject.CompareTag("DetruirePlayer")){
+            Destroy(gameObject);
+        }
     }
 }
